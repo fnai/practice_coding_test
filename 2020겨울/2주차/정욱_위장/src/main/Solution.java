@@ -2,6 +2,9 @@ package main;
 
 import java.util.ArrayList;
 
+//Todo 내 코드는 잘 짰지만 테스트 ㅈㄴ 실패함 테스트케이스 추가해서 확인할것
+
+
 public class Solution {
 	public int solution(String[][] clothes) {
         int answer = 0;
@@ -10,7 +13,7 @@ public class Solution {
         
         sortClothes = sorting(clothes,sortClothes);
         
-        answer = calNumCase(sortClothes, 0) + clothes.length;
+        answer = calNumCase(sortClothes, 0) - 1;
         
         return answer;
     }
@@ -37,13 +40,10 @@ public class Solution {
 	}
 
 	private int calNumCase(ArrayList<String[]> sortClothes, int index) {
-		if(sortClothes.size() == 1){
-			return 0;
-		}
 		if(sortClothes.size() <= index){
 			return 1;
 		}
 		
-		return Integer.parseInt(sortClothes.get(index)[1]) * calNumCase(sortClothes, index + 1);
+		return (Integer.parseInt(sortClothes.get(index)[1])+1) * calNumCase(sortClothes, index + 1);
 	}
 }
