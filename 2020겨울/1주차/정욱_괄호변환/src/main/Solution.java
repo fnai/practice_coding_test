@@ -43,19 +43,8 @@ public class Solution {
 		if(input.length() == 0){
     		return "";
     	}
-    	
-		u += input.charAt(0);
 		
-		if(input.charAt(0) == '('){
-			countLeft++;
-		}
-		else {
-			countRight++;
-			
-			check = 1;
-		}
-		
-    	for(sur = 1 ; sur < input.length() ; sur++){
+    	for(sur = 0 ; sur < input.length() ; sur++){
     		u += input.charAt(sur);
     		
     		if(input.charAt(sur) == '('){
