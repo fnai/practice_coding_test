@@ -3,6 +3,7 @@ package main;
 import java.util.ArrayList;
 
 //Todo 내 코드는 잘 짰지만 테스트 ㅈㄴ 실패함 테스트케이스 추가해서 확인할것
+//+계산로직은 맞는데 오류가 나는걸 보면 뭔가 이상한대서 틀리는듯함
 
 
 public class Solution {
