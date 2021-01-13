@@ -29,12 +29,12 @@ public class Solution {
         //this.checkMatrix(n, computers);
         
         for(int sur = 0 ; sur < n ; sur++){
-        	if(checkComputer[sur] == 0){
+        	   	if(checkComputer[sur] == 0){
         		checkComputer[sur] = 1;
         		
-        		for(int roop = 0 ; roop < n ; roop++){
+        		for(int roop = sur + 1 ; roop < n ; roop++){
         			//check가 이미 1이라면 그 이후 연결은 이미 다 체크가 되어있으므로 굳이 확인 안해도 됨
-        			if(computers[sur][roop] == 1 && checkComputer[roop] == 0){
+        			if(computers[sur][roop] == 1){
         				checkComputer[roop] = 1;
         				queueComputer.add(roop);
         			}
@@ -45,16 +45,14 @@ public class Solution {
         			queueComputer.remove(0);
         			
         			for(int roop = 0 ; roop < n ; roop++){
-        				if(roop == targetComputer){
-        					//computer[i][i]인 경우 체크 안하고 패스
-        				}
-        				else if(computers[targetComputer][roop] == 1 && checkComputer[roop] == 0){
+        				
+        				if(computers[targetComputer][roop] == 1 && checkComputer[roop] == 0){
             				checkComputer[roop] = 1;
             				queueComputer.add(roop);
+            				
             			}
             		}
         		}
-        		
         		answer++;
         	}
         }
