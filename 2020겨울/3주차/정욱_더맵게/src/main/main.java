@@ -9,6 +9,10 @@ public class main {
 		int[] input = {1, 2, 3, 9, 10, 12};
 		System.out.println(test.solution(input,7)+" = 2");
 		System.out.println("----------------------------------------------");
+		
+		int[] input2 = {0, 0, 0, 0};
+		System.out.println(test.solution(input2,3)+" = -1");
+		System.out.println("----------------------------------------------");
 	}
 
 }

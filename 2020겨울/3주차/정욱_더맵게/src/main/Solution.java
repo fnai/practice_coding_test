@@ -11,19 +11,24 @@ import java.util.Collections;
 		
 public class Solution {
 	public int solution(int[] scoville, int K) {
-        int answer = 0;
-        int target = 0;
+        int answer = -1;
         
         int count = 0;
         
         ArrayList<Integer> scovilleArray = new ArrayList<>();
         
         for(int sur = 0 ; sur < scoville.length ; sur++){
+        	answer = 0;
         	scovilleArray.add(scoville[sur]);
+        	
         }
         
+        Collections.sort(scovilleArray);
+        
         for(int sur = 0 ; sur < scovilleArray.size() ; sur++){
-        	Collections.sort(scovilleArray);
+        	if(scovilleArray.size() == 1){
+        		break;
+        	}
         	
         	//test
         	count++;
@@ -34,10 +39,17 @@ public class Solution {
         		scovilleArray.remove(sur + 1);
         		answer++;
         		
+        		Collections.sort(scovilleArray);
+        		
         		sur = -1;
         	}
         }
         
+      
+        if(scovilleArray.get(0) < K){
+        	answer = -1;
+        }
+           
         return answer;
     }
 }
