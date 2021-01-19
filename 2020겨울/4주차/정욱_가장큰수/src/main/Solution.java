@@ -3,6 +3,7 @@ package main;
 import java.util.ArrayList;
 
 public class Solution {
+	//첫 숫자로 먼저 1~9까지 배분을 하고 이후에  정렬 로직을 사용하여 큰 수 찾기
 	public String solution(int[] numbers) {
         String answer = "";
         
@@ -28,7 +29,7 @@ public class Solution {
         		continue;
         	}
         	
-        	//큰수 배열 로직이 들어가야함;;
+        	//정렬하는 로직이 들어가야함;;
         	//----------------
         	//----------------
         	
